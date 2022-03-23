@@ -40,7 +40,7 @@ module.exports = {
     },
     plugins: [
         // webpack-plugin - nos va a permitir trabajar con los archivos HTML
-        new HtmlWebpackPlugin([
+        new HtmlWebpackPlugin(
             // Establecer lo que necesitamos
             {
                 inject: true,
@@ -49,7 +49,7 @@ module.exports = {
                 // donde lo tenemos que mandar o guardar
                 filename: './index.html'
             }
-        ])
+        )
     ]
 }
 

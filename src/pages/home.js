@@ -1,4 +1,4 @@
-const home = () => {
+const Home = () => {
     const view = `
         <div class="Characters">
             <article class="Character-item">
@@ -13,4 +13,4 @@ const home = () => {
     return view;
 };
 
-export default home;
+export default Home;
