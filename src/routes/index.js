@@ -24,6 +24,15 @@ const router =  async () => {
     const content = null || document.getElementById('content');
 
     header.innerHTML = await Header();
+    let hash = getHash(); // Obtener el hash en el que se encuentre o a la seccion en la que se está moviendo
+    // Obtener la ruta
+    let route = await resolveRoutes(hash);
+
+    // Contener el valor de las rutas
+    // Si retorna un elemento vamos a mostrarlo, pero si no existe mostramos el Error404
+    let render = routes[route] ? routes[route] : Error404;
+
+    content.innerHTML = await render();
 }
 
 export default router;
