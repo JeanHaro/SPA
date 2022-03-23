@@ -2,6 +2,8 @@
 const path = require('path');
 // archivo necesario para trabajar en HTML
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// Copiar los estilos hacia la carpeta dist
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // Modulo que vamos a exportar donde viene cada configuración de lo que va a suceder
 // Este modulo es un objeto donde vive esa configuración
@@ -49,7 +51,13 @@ module.exports = {
                 // donde lo tenemos que mandar o guardar
                 filename: './index.html'
             }
-        )
+        ),
+        new CopyWebpackPlugin({
+            patterns: [{
+                from: './src/styles/styles.css',
+                to: ''
+            }]
+        })
     ]
 }
 
