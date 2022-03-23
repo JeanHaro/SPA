@@ -6,6 +6,10 @@ import Home from '../pages/home';
 import Character from '../pages/Character';
 import Error404 from '../pages/error404';
 
+// Utils
+import getHash from '../utils/getHash';
+import resolveRoutes from '../utils/resolveRoutes';
+
 // Rutas
 const routes = {
     '/': Home,
